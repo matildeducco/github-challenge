@@ -1,0 +1,141 @@
+div.container {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.main-row,
+.small-row {
+    border: #ffe979 solid 4px;
+    border-radius: 12px 12px;
+    padding: 40px 40px 40px;
+    font-family: "Roboto Slab", serif;
+}
+
+.today {
+    border: solid #ffe979 4px;
+    border-radius: 50%;
+    padding: 30px 30px 30px;
+    width: 275px;
+    background: #ffe979;
+    position: relative;
+    left: 50px;
+    top: 34px;
+}
+
+h1 {
+    color: #1c196d;
+    position: relative;
+    left: 55px;
+}
+
+.measures {
+    font-size: 18px;
+    position: relative;
+    top: -15px;
+}
+
+h2,
+h4.weather-data {
+    background: rgba(255, 233, 121, 0.5);
+}
+
+h2.right-box {
+    text-align: right;
+}
+
+h4.weather-data {
+    margin-top: 40px;
+}
+
+.search-bar {
+    border: #bf98ff solid 3px;
+    border-radius: 30px 30px;
+    text-align: center;
+    margin-top: 91px;
+}
+
+.current-weather-icon {
+    color: #bf98ff;
+    font-size: 105px;
+    position: relative;
+    left: 34px;
+}
+
+.weather-icon {
+    color: #bf98ff;
+    font-size: 75px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+.small-row {
+    margin-top: 60px;
+    text-align: center;
+    background-color: #ffe979;
+}
+
+h5 {
+    color: #1c196d;
+    position: relative;
+    left: 81px;
+    margin-top: 10px;
+}
+
+h6 {
+    color: #1c196d;
+}
+
+.button {
+    background-color: #bf98ff;
+    width: 100px;
+    position: relative;
+    right: -170px;
+    border: #bf98ff solid 1px;
+    border-radius: 0 18px 18px;
+    transition: all 500ms ease-in-out;
+}
+
+.button:hover {
+    background-color: #7a61a3;
+}
+
+.celsius {
+    color: #000;
+    text-decoration: none;
+}
+
+.celsius:focus {
+    color: #0a58ca;
+    text-decoration: underline;
+}
+
+.fahrenheit {
+    color: #000;
+    text-decoration: none;
+}
+
+.fahrenheit:focus {
+    color: #0a58ca;
+    text-decoration: underline;
+}
+
+.current-location {
+    position: relative;
+    right: -978px;
+    top: -112px;
+    padding: 10px 20px;
+    background: #bf98ff;
+    color: #fff;
+    border: #bf98ff solid 1px;
+    border-radius: 10px 10px 10px;
+}
+
+#current-location {
+    text-decoration: none;
+    color: #fff;
+}
+
+.current-location:hover {
+    background-color: #7a61a3;
+    transition: all 500ms ease-in-out;
+}
