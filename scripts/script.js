@@ -36,7 +36,7 @@ function currentDate(currentTime) {
   let year = now.getFullYear();
   let date = now.getDate();
 
-  return `${day} ${month} ${date} ${year} < /br> ${hour}:${minutes}`;
+  return `${day} ${month} ${date} ${year} </br> ${hour}:${minutes}`;
 }
 
 let refreshTime = document.querySelector(".right-box");
