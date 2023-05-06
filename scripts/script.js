@@ -1,5 +1,3 @@
-// 1
-
 function currentDate(currentTime) {
   let days = [
     "Sunday",
@@ -34,47 +32,34 @@ function currentDate(currentTime) {
   if (minutes < 10) {
     minutes = `0${minutes}`;
   }
-  let year = now.getFullYear();
   let month = months[now.getMonth()];
+  let year = now.getFullYear();
   let date = now.getDate();
 
-  return `${day} <br /> ${month} ${date} <br /> ${year} <br /> ${hour}:${minutes}`;
+  return `${day} ${month} ${date} ${year} < /br> ${hour}:${minutes}`;
 }
+
 let refreshTime = document.querySelector(".right-box");
 let now = new Date();
 refreshTime.innerHTML = currentDate(now);
 
-// 2
+//function getCelsius(event) {
+//event.preventDefault();
+//let h1 = document.querySelector(".temp");
+//h1.innerHTML = "19";
+//}
 
-function search(event) {
-  event.preventDefault();
-  let newCity = document.querySelector("#city");
-  let searchedCity = document.querySelector(".left-box");
-  searchedCity.innerHTML = newCity.value;
-}
-let searchCity = document.querySelector("#search-city");
-searchCity.addEventListener("submit", search);
-let h1 = document.querySelector(".left-box");
-h1.innerHTML = " ";
+//let celsius = document.querySelector(".celsius");
+//celsius.addEventListener("click", getCelsius);
 
-// bonus
-function getCelsius(event) {
-  event.preventDefault();
-  let h1 = document.querySelector(".temp");
-  h1.innerHTML = "19";
-}
+//function getFahrenheit(event) {
+//event.preventDefault();
+//let h1 = document.querySelector(".temp");
+//h1.innerHTML = "66";
+//}
 
-let celsius = document.querySelector(".celsius");
-celsius.addEventListener("click", getCelsius);
-
-function getFahrenheit(event) {
-  event.preventDefault();
-  let h1 = document.querySelector(".temp");
-  h1.innerHTML = "66";
-}
-
-let fahrenheit = document.querySelector(".fahrenheit");
-fahrenheit.addEventListener("click", getFahrenheit);
+//let fahrenheit = document.querySelector(".fahrenheit");
+//fahrenheit.addEventListener("click", getFahrenheit);
 
 function getLocalTemperature(response) {
   console.log(response);
@@ -82,23 +67,29 @@ function getLocalTemperature(response) {
   h1.innerHTML = response;
 }
 
-// city search - name and temp
-
 function showTemperature(response) {
   let currentTemp = document.querySelector("h1");
   currentTemp.innerHTML = `${response.data.main.temp}`;
-  let newQuery = document.querySelector("#find");
   let currentCity = document.querySelector(".left-box");
-  currentCity.innerHTML = `${"#find.value"}`;
+  currentCity.innerHTML = response.data.name;
 }
-let city = document.querySelector("#city.value");
-let units = "metric";
-let apiKey = "1fd8093fa5ff12d796d7de756cc9d6b9";
-let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=${units}`;
 
-axios.get(apiUrl).then(showTemperature);
+function search(event) {
+  event.preventDefault();
+  let newCity = document.querySelector("#city");
+  let searchedCity = document.querySelector(".left-box");
+  searchedCity.innerHTML = newCity.value;
+  let units = "metric";
+  let apiKey = "1fd8093fa5ff12d796d7de756cc9d6b9";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${newCity.value}&appid=${apiKey}&units=${units}`;
 
-// current position button
+  axios.get(apiUrl).then(showTemperature);
+}
+
+let searchCity = document.querySelector("#search-city");
+searchCity.addEventListener("submit", search);
+let h1 = document.querySelector(".left-box");
+h1.innerHTML = " ";
 
 function getPosition(position) {
   let lat = position.coords.latitude;
