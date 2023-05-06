@@ -69,7 +69,7 @@ function getLocalTemperature(response) {
 
 function showTemperature(response) {
   let currentTemp = document.querySelector("h1");
-  currentTemp.innerHTML = Math.round`${response.data.main.temp}`;
+  currentTemp.innerHTML = Math.round(`${response.data.main.temp}`);
   let currentCity = document.querySelector(".left-box");
   currentCity.innerHTML = response.data.name;
 }
